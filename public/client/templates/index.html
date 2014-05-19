@@ -1,31 +1,36 @@
 <!doctype html>
-<html ng-app="phrequency">
+<html ng-app='phrequency'>
   <head>
-    <meta charset="utf-8" />
+    <meta charset='utf-8' />
     <title>phrequency</title>
-    <script src="../../../bower_components/angular/angular.js"></script>
-    <script src="../../../bower_components/angular-animate/angular-animate.js"></script>
-    <script src="../../../bower_components/gsap/src/minified/TweenMax.min.js"></script>
-    <script src="../../../bower_components/ng-Fx/dist/ng-Fx.js"></script>
-    <script src="/client/js/app.js"></script>
-    <link rel="stylesheet" type="text/css" href="/client/style.css">
+    <script src='../../../bower_components/angular/angular.js'></script>
+    <script src='../../../bower_components/angular-animate/angular-animate.js'></script>
+    <script src='../../../bower_components/gsap/src/minified/TweenMax.min.js'></script>
+    <script src='../../../bower_components/ng-Fx/dist/ng-Fx.js'></script>
+    <script src='/client/js/app.js'></script>
+    <link rel='stylesheet' type='text/css' href='/client/style.css'>
   </head>
 
   <body>
     <h1>phrequency</h1>
 
     <div>
-      <form ng-controller="indicatorController">
-        <input type="text" name="name" placeholder="Name" ng-model="inputName"/>
-        <input type="text" name="frequency" placeholder="Frequency" ng-model="inputFrequency"/>
-        <input type="button" name="" value="" ng-click="click(inputName, inputFrequency)">
+      <form ng-controller='indicatorController'>
+        <input type='text' name='name' placeholder='Event' ng-model='inputName'/> 
+        <input type='text' name='frequency' placeholder='Frequency in seconds' ng-model='inputFrequency'/>
+        <!-- <div ng-show='inputName'> -->
+          <div ng-if='(inputName && !inputFrequency)'>
+            {{inputName}} happens once every [Put a frequency in!] seconds.
+          </div>
+          <div ng-if='(inputName && inputFrequency)'>
+            {{inputName}} happens once every {{inputFrequency}} seconds.<input type='button' name='' value="That's Right!" ng-click='click(inputName, inputFrequency)'>
+          </div>
       </form>
     </div>
     
-    <div ng-controller="indicatorController">
-      <input ng-class="class" type="button" placeholder="Class Check">
-      <ul ng-repeat="ind in indicators">
-        <li ng-class="ind.class">{{ind.name}}</li>
+    <div ng-controller='indicatorController'>
+      <ul ng-repeat='ind in indicators'>
+        <li ng-class='ind.class'>{{ind.name}}</li>
       </ul>
     </div>
 

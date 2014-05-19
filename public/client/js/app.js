@@ -10,6 +10,9 @@ var app = angular.module('phrequency', [])
     item.class = (item.class === "happening") ? "notHappening" : "happening";
   };
 
+  //do this later!
+  // $scope.inputFrequencyPlaceholder = $scope.inputFrequency || '[Put frequency here!]'
+
   $scope.get = function () {
     restful.getIndicators().then(function (promise){
       $scope.indicators = promise.data;
