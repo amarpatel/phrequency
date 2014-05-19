@@ -1,57 +1,37 @@
-var app = angular.module('phrequency', [])
+var app = angular.module('phrequency', ['colorpicker.module'])
 
 .controller('indicatorController', ['$scope', '$interval', 'restful', 'intervalCreator', function ($scope, $interval, restful, intervalCreator) {
-
-  // $scope.changeClass = function (item) {
-  //   $scope.class = ($scope.class === "happening") ? "notHappening" : "happening";
-  // };
 
   $scope.changeClass = function (item) {
     item.class = (item.class === "happening") ? "notHappening" : "happening";
   };
 
-  //do this later!
-  // $scope.inputFrequencyPlaceholder = $scope.inputFrequency || '[Put frequency here!]'
-
   $scope.get = function () {
     restful.getIndicators().then(function (promise){
       $scope.indicators = promise.data;
-      console.log($scope.indicators);
-
-
-
-
-
       for (var i=0;i<$scope.indicators.length;i++) {
-        console.log($scope.indicators[i].frequency)
-
         intervalCreator.createInterval($scope.changeClass, $scope.indicators[i].frequency, $scope.indicators[i]);
       }
-
-
     });
   };
 
   $scope.get();
 
-  $scope.click = function (inputName, inputFrequency) {
-    restful.sendIndicator(inputName, inputFrequency).then(function (promise) {
+  $scope.click = function (inputName, inputFrequency, inputBackground, inputFontColor) {
+    restful.sendIndicator(inputName, inputFrequency, inputBackground, inputFontColor).then(function (promise) {
       $scope.inputName = '';
       $scope.inputFrequency = '';
     });
   };
-
-
-  $scope.class = "happening"
-
 }])
+
 .factory('restful', ['$http', function ($http) {
   return {
-    sendIndicator: function (inputName, inputFrequency) {
+    sendIndicator: function (inputName, inputFrequency, inputBackground, inputFontColor) {
       return $http({
         method: 'POST',
         url: '/submit',
-        data: {name: inputName, frequency: inputFrequency}
+        data: {name: inputName, frequency: inputFrequency, background: inputBackground, font: inputFontColor}
       }).success(function (data, status) {
         console.log('success!', data);
         return data;
@@ -83,12 +63,13 @@ var app = angular.module('phrequency', [])
 }])
 
 
-/*
-create factory
-input object
-output function/promise
-in controller
-  invoke factory
-  append .then and call the function over and over again
 
-*/
+
+
+
+
+
+
+
+
+
