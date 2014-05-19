@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app='phrequency'>
   <head>
-    <meta charset='utf-8' />
+    <meta 'charset'='utf-8' />
     <title>phrequency</title>
     <script src='../../../bower_components/angular/angular.js'></script>
     <script src='../../../bower_components/angular-animate/angular-animate.js'></script>
@@ -9,31 +9,30 @@
     <script src='../../../bower_components/ng-Fx/dist/ng-Fx.js'></script>
     <script src='/client/js/app.js'></script>
     <link rel='stylesheet' type='text/css' href='/client/style.css'>
+    <link rel='stylesheet' type='text/css' href='../../../bower_components/bootstrap/dist/css/bootstrap.css'>
   </head>
 
   <body>
     <h1>phrequency</h1>
 
-    <div>
-      <form ng-controller='indicatorController'>
-        <input type='text' name='name' placeholder='Event' ng-model='inputName'/> 
-        <input type='text' name='frequency' placeholder='Frequency in seconds' ng-model='inputFrequency'/>
-        <!-- <div ng-show='inputName'> -->
-          <div ng-if='(inputName && !inputFrequency)'>
-            {{inputName}} happens once every [Put a frequency in!] seconds.
-          </div>
-          <div ng-if='(inputName && inputFrequency)'>
-            {{inputName}} happens once every {{inputFrequency}} seconds.<input type='button' name='' value="That's Right!" ng-click='click(inputName, inputFrequency)'>
-          </div>
-      </form>
-    </div>
-    
-    <div ng-controller='indicatorController'>
-      <ul ng-repeat='ind in indicators'>
-        <li ng-class='ind.class'>{{ind.name}}</li>
-      </ul>
-    </div>
+    <form ng-controller='indicatorController'>
+      <input type='text' name='name' placeholder='Event' ng-model='inputName'/> 
+      <input type='text' name='frequency' placeholder='Frequency in seconds' ng-model='inputFrequency'/>
 
+      <!-- shows if only input name is entered -->
+        <div ng-if='(inputName && !inputFrequency)'>
+          {{inputName}} happens once every [Put a frequency in!] seconds.
+        </div>
+
+      <!-- shows if only input name and inputfrequency are entered -->
+        <div ng-if='(inputName && inputFrequency)'>
+          {{inputName}} happens once every {{inputFrequency}} seconds.     <input class='btn btn-xs btn-primary' type='button' name='' value="That's Right!" ng-click='click(inputName, inputFrequency)'>
+        </div>
+    </form>
+
+    <div class="row" ng-controller='indicatorController'>
+      <div class="col-md-3 item" ng-class='ind.class' ng-repeat='ind in indicators'>{{ind.name}}</div>
+    </div>
 
   </body>
 </html>
