@@ -1,7 +1,7 @@
 .happening {
-  display: block;
+  opacity: 1;
 }
 
 .notHappening {
-  display: none;
+  opacity: 0;
 }

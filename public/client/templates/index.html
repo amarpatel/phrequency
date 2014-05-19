@@ -23,10 +23,12 @@
     </div>
     
     <div ng-controller="indicatorController">
+      <input ng-class="class" type="button" placeholder="Class Check">
       <ul ng-repeat="ind in indicators">
-        <li ng-class="class">{{ind.name}}</li>
+        <li ng-class="ind.class">{{ind.name}}</li>
       </ul>
     </div>
+
 
   </body>
 </html>

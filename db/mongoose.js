@@ -14,7 +14,11 @@ var indicatorSchema = new Schema({
     type: String,
     unique: true
   },
-  frequency:   Number
+  frequency:   Number,
+  class: {
+    type: String,
+    default: 'happening'
+  }
 }, {id: true});
 
 // Declare methods
