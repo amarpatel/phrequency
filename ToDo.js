@@ -1,9 +1,13 @@
 ToDo
-  -have ~10 already running
   -on mouseover: show source
-  -have create indicator slide in on button click
-  -create helper for indicators
   -on click: edit title/change colors 
+  -adjust height of items
+    -vertically align text
+  -have items appear on click
+
+Done
+  // -have create indicator slide in on button click
+  // -have ~10 already running
   // -add indicator:
   //   -user choose background color
   //   -user choose font color
@@ -19,10 +23,6 @@ ToDo
 NOTES
 
 Current Task
-  -adjust height of items
-    -vertically align text
-  -have items appear on click
-
 
 
 

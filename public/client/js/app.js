@@ -4,16 +4,31 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
+
+    // When user wants to create an indicator
+    .state('/create', {
+      url: '/create',
+      views: {
+        inputs: { templateUrl: 'client/templates/inputs.html', controller: 'indicatorInputController'},
+        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
+      }
+    })
+
+    // Initial state
     .state('/', {
       url: '/',
       views: {
-        inputs: { templateUrl: 'client/templates/inputs.html', controller: 'indicatorController'},
-        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorController'}
+        inputs: { templateUrl: 'client/templates/createButton.html', controller: 'indicatorInputController'},
+        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
       }
     })
 })
 
-.controller('indicatorController', ['$scope', '$interval', 'restful', 'intervalCreator', function ($scope, $interval, restful, intervalCreator) {
+.controller('indicatorInputController', ['$scope', 'restful', 'intervalCreator', '$location', function ($scope, restful, intervalCreator, $location) {
+
+  $scope.showInputField = function (view) {
+    $location.path(view);
+  };
 
   $scope.click = function (inputName, inputFrequency, inputBackground, inputFontColor) {
     restful.sendIndicator(inputName, inputFrequency, inputBackground, inputFontColor).then(function (promise) {
@@ -22,17 +37,16 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
     });
   };
 
+  //toggles class
   $scope.changeClass = function (item) {
     item.class = (item.class === "happening") ? "notHappening" : "happening";
   };
 
-  //calls /submit and GETs data
-  //assigns data to $scope.indicators
+  //calls /submit and GETs data; assigns data to $scope.indicators
   $scope.get = function () {
     restful.getIndicators().then(function (promise){
       $scope.indicators = promise.data;
       for (var i=0;i<$scope.indicators.length;i++) {
-        console.log('called');
         //creates interval for each indicator's frequency
         intervalCreator.createInterval($scope.changeClass, $scope.indicators[i].frequency, $scope.indicators[i]);
       }
@@ -45,6 +59,7 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
 
 .factory('restful', ['$http', function ($http) {
   return {
+
     sendIndicator: function (inputName, inputFrequency, inputBackground, inputFontColor) {
       return $http({
         method: 'POST',
@@ -57,6 +72,7 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
         console.log('error!', data, status);
       });
     },
+
     getIndicators: function () {
       return $http({
         method: 'GET',
@@ -67,6 +83,7 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
         console.log('error!', data, status);
       });
     }
+
   }
 }])
 
@@ -79,10 +96,4 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
     }
   }
 }])
-
-
-
-
-
-
 

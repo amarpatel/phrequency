@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var util = require('./lib/util');
 
+console.log('Live on port 8000')
+
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + '/public'));
 

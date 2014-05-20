@@ -3,25 +3,35 @@
   <head>
     <meta 'charset'='utf-8' />
     <title>phrequency</title>
-    <script src='../../../bower_components/angular/angular.js'></script>
-    <script src='../../../bower_components/angular-ui-router/release/angular-ui-router.js'></script>
-    <script src='/client/colorpicker/bootstrap-colorpicker-module.js'></script>
-    <script src='/client/js/app.js'></script>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' type='text/css' href='/client/style.css'>
-    <link rel='stylesheet' type='text/css' href='../../../bower_components/bootstrap/dist/css/bootstrap.css'>
+    <link rel='stylesheet' type='text/css' href='/bower_components/bootstrap/dist/css/bootstrap.css'>
     <link rel='stylesheet' type='text/css' href='/client/colorpicker/colorpicker.css'>
+    <script src='/bower_components/angular/angular.js'></script>
+    <script src='bower_components/angular-ui-router/release/angular-ui-router.js'></script>
+    <script src='/client/colorpicker/bootstrap-colorpicker-module.js'></script>
+    <script src='/client/js/app.js'></script>
   </head>
 
   <body>
 
     <!-- Titles -->
     <h1 class="center">phrequency</h1>
-    <h5 class="center">Short Description</h5>
+    <h5 class="center">Flashes mean the event has occured</h5>
 
-    <!-- views -->
+    <!-- input view -->
     <div ui-view="inputs"></div>
+
+    <br/>
+    
+    <!-- indicators view -->
     <div ui-view="indicators"></div>
+
+    <!-- footer -->
+    <div class="footer-wrapper center">
+      <footer>Inspired by <a href="http://www.xkcd.com/1331/" title="http://www.xkcd.com/1331/">xkcd</a></footer>
+      <footer>Created by <a href="http://www.amarpatel.io/" title="http://amarpatel.io/">Amar Patel</a></footer>
+    </div>
 
   </body>
 </html>

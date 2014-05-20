@@ -30,15 +30,10 @@
     display:inline-block;
 }
 
-/*.colWidth {
-  max-width: 60%;
-}*/
-
 .preview {
   max-width: 21.25%
 }
 
-/*how to vertically align text!?!?!?*/
 .col-xs-3 {
   height: 120px;
 }
