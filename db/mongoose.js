@@ -1,4 +1,3 @@
-// var Promise = require('bluebird');
 var mongoose = require('mongoose');
 
 var ip = 'mongodb://localhost/phrequency';
