@@ -8,7 +8,7 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
       url: '/',
       views: {
         inputs: { templateUrl: 'client/templates/inputs.html', controller: 'indicatorController'},
-        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'showIndicatorController'}
+        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorController'}
       }
     })
 })
@@ -21,9 +21,6 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
       $scope.inputFrequency = '';
     });
   };
-}])
-
-.controller('showIndicatorController', ['$scope', 'intervalCreator', 'restful', function ($scope, intervalCreator, restful) {
 
   $scope.changeClass = function (item) {
     item.class = (item.class === "happening") ? "notHappening" : "happening";
@@ -35,6 +32,7 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
     restful.getIndicators().then(function (promise){
       $scope.indicators = promise.data;
       for (var i=0;i<$scope.indicators.length;i++) {
+        console.log('called');
         //creates interval for each indicator's frequency
         intervalCreator.createInterval($scope.changeClass, $scope.indicators[i].frequency, $scope.indicators[i]);
       }

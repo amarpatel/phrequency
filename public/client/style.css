@@ -18,6 +18,8 @@
           box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
   font-size: 1.5em;
+  vertical-align: middle;
+
 }
 
 .center {
@@ -28,10 +30,15 @@
     display:inline-block;
 }
 
-.colWidth {
+/*.colWidth {
   max-width: 60%;
-}
+}*/
 
 .preview {
   max-width: 21.25%
+}
+
+/*how to vertically align text!?!?!?*/
+.col-xs-3 {
+  height: 120px;
 }

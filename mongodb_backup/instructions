@@ -1,0 +1,5 @@
+backup
+  'mongodump --db phrequency' while terminal is in /mongodb_backup
+
+restore
+  'mongorestore .' while terminal is in /dump
