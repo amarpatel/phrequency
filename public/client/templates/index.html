@@ -17,15 +17,26 @@
 
     <!-- Titles -->
     <h1 class="center">phrequency</h1>
-    <h5 class="center">Flashes mean the event has occured</h5>
+    <h5 class="center">a flash for every occurance</h5>
 
-    <!-- input view -->
+    <!-- input views -->
     <div ui-view="inputs"></div>
 
     <br/>
     
-    <!-- indicators view -->
-    <div ui-view="indicators"></div>
+    <!-- indicators-->
+    <div ng-controller="indicatorInputController" class="container-fluid">    
+      <div class="row">
+        <div 
+        class="col-xs-3 item" 
+        ng-class='ind.class' 
+        ng-repeat='ind in indicators'
+        ng-style='{background: ind.background, color: ind.font}' 
+        >
+          {{ind.name | uppercase}}
+        </div>
+      </div>
+    </div>
 
     <!-- footer -->
     <div class="footer-wrapper center">

@@ -5,21 +5,19 @@ var app = angular.module('phrequency', ['colorpicker.module', 'ui.router'])
 
   $stateProvider
 
-    // When user wants to create an indicator
-    .state('/create', {
-      url: '/create',
-      views: {
-        inputs: { templateUrl: 'client/templates/inputs.html', controller: 'indicatorInputController'},
-        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
-      }
-    })
-
     // Initial state
     .state('/', {
       url: '/',
       views: {
-        inputs: { templateUrl: 'client/templates/createButton.html', controller: 'indicatorInputController'},
-        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
+        inputs: { templateUrl: 'client/templates/createButton.html', controller: 'indicatorInputController'}
+      }
+    })
+    
+    // When user wants to create an indicator
+    .state('/create', {
+      url: '/create',
+      views: {
+        inputs: { templateUrl: 'client/templates/inputs.html', controller: 'indicatorInputController'}
       }
     })
 })

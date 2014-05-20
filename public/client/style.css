@@ -37,3 +37,7 @@
 .col-xs-3 {
   height: 120px;
 }
+
+.footerProtector {
+  min-height: 50%;
+}
