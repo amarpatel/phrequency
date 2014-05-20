@@ -1,4 +1,12 @@
-var app = angular.module('phrequency', ['colorpicker.module'])
+var app = angular.module('phrequency', ['colorpicker.module', 'ngAnimate', 'fx.animations'])
+
+// .config(['$routeProvider', function ($routeProvider) {
+//   $routeProvider
+//     .when('/', {
+//       templateUrl: '../templates/indicators.html',
+//       controller: 'indicatorController'
+//     })
+// }])
 
 .controller('indicatorController', ['$scope', '$interval', 'restful', 'intervalCreator', function ($scope, $interval, restful, intervalCreator) {
 
@@ -52,7 +60,7 @@ var app = angular.module('phrequency', ['colorpicker.module'])
   }
 }])
 
-.factory('intervalCreator', [ '$interval', function ($interval) {
+.factory('intervalCreator', ['$interval', function ($interval) {
   return {
     createInterval: function (func, interval, item) {
       return $interval(function () {
@@ -61,11 +69,6 @@ var app = angular.module('phrequency', ['colorpicker.module'])
     }
   }
 }])
-
-
-
-
-
 
 
 

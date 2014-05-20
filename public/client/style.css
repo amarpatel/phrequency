@@ -3,19 +3,21 @@
 }
 
 .notHappening {
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .item {
   background: lightgrey;
   text-align: center;
-  /*margin: 1px 1px 1px 1px ;*/
+  /*margin: 1px 1px 1px 1px;*/
   box-shadow:-0.5px 0.5px 0.5px 0.5px lightgrey;
-  padding: 1%;
+  padding: 2%;
   border-radius: 3px;
   -webkit-box-sizing: border-box;
      -mox-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
 }
 
 .center {
@@ -24,4 +26,12 @@
 
 .center form {
     display:inline-block;
+}
+
+.colWidth {
+  max-width: 60%;
+}
+
+.preview {
+  max-width: 21.25%
 }
