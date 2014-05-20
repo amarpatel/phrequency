@@ -25,18 +25,7 @@
     <br/>
     
     <!-- indicators-->
-    <div ng-controller="indicatorInputController" class="container-fluid">    
-      <div class="row">
-        <div 
-        class="col-xs-3 item" 
-        ng-class='ind.class' 
-        ng-repeat='ind in indicators'
-        ng-style='{background: ind.background, color: ind.font}' 
-        >
-          {{ind.name | uppercase}}
-        </div>
-      </div>
-    </div>
+    <div ui-view="indicators"></div>
 
     <!-- footer -->
     <div class="footer-wrapper center">

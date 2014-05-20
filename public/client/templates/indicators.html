@@ -1,11 +1,10 @@
-<!-- unused -->
 <div class="container-fluid">    
   <div class="row">
     <div 
     class="col-xs-3 item" 
     ng-class='ind.class' 
     ng-style='{background: ind.background, color: ind.font}' 
-    ng-repeat='ind in indicators'
+    ng-repeat='ind in indicators | orderBy: "ind.date"'
     >
       {{ind.name | uppercase}}
     </div>

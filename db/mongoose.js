@@ -26,7 +26,8 @@ var indicatorSchema = new Schema({
   font: {
     type: String,
     default: 'black'
-  }
+  },
+  date: { type: Date, default: Date.now }
 }, {id: true});
 
 exports.Indicator = mongoose.model('Indicator', indicatorSchema);
