@@ -3,7 +3,7 @@
     <div>
       <!-- Input Fields -->
       <input class='form-control' type='text' name='name' placeholder='Event' ng-model='inputName'/> 
-      <input class='form-control' type='text' name='frequency' placeholder='Frequency' ng-model='inputFrequency'/>
+      <input class='form-control' type='text' name='frequency' placeholder='Frequency/minute' ng-model='inputFrequency'/>
       <input class='form-control' colorpicker-position="bottom" colorpicker="rgb" type="text" placeholder="Background Color" ng-model="inputBackground"/>
       <input class='form-control' colorpicker-position="bottom" colorpicker="rgb" type="text" placeholder="Font Color" ng-model="inputFontColor"/>
       <!-- Display sample if name and frequency are entered -->
@@ -15,7 +15,7 @@
   <div ng-if='(inputName && inputFrequency)' class="container-fluid colWidth">
     <br/>
     <div class="col-xs-4 item" ng-style='{opacity: 0}'></div>
-    <div class="col-xs-4 item" ng-class='happening' ng-style='{background: inputBackground, color: inputFontColor, textAlign: center}'>{{inputName | uppercase}} happens once every {{inputFrequency}} seconds.</div>
+    <div class="col-xs-4 item" ng-class='happening' ng-style='{background: inputBackground, color: inputFontColor, textAlign: center}'>{{inputName | uppercase}} happens {{inputFrequency}} times a minute.</div>
     <div class="col-xs-4 item" ng-style='{opacity: 0}'></div>
   </div>
 

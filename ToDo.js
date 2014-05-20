@@ -1,10 +1,11 @@
 ToDo
-  -for user to add new indicator, have a view appear
   -have ~10 already running
   -on mouseover: show source
-  -add indicator:
-    -user choose background color
-    -user choose font color
+  -have create indicator slide in on button click
+  -create helper for indicators
+  // -add indicator:
+  //   -user choose background color
+  //   -user choose font color
   // -create one that works!
   // -make DB!
   //   -have input fields post to sql server
@@ -17,8 +18,6 @@ ToDo
 NOTES
 
 Current Task
-  -add indicator:
-    -user choose background color
 
 
 

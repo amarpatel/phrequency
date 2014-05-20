@@ -4,10 +4,9 @@
     <meta 'charset'='utf-8' />
     <title>phrequency</title>
     <script src='../../../bower_components/angular/angular.js'></script>
-    <script src='../../../bower_components/angular-route/angular-route.js'></script>
     <script src='../../../bower_components/angular-ui-router/release/angular-ui-router.js'></script>
-    <script src='/client/js/app.js'></script>
     <script src='/client/colorpicker/bootstrap-colorpicker-module.js'></script>
+    <script src='/client/js/app.js'></script>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' type='text/css' href='/client/style.css'>
     <link rel='stylesheet' type='text/css' href='../../../bower_components/bootstrap/dist/css/bootstrap.css'>
@@ -20,51 +19,9 @@
     <h1 class="center">phrequency</h1>
     <h5 class="center">Short Description</h5>
 
+    <!-- views -->
     <div ui-view="inputs"></div>
     <div ui-view="indicators"></div>
-
-
-
-
-<!--     <div ng-controller='indicatorController'>
-      <form class="form-inline center">
-        <div> -->
-          <!-- Input Fields -->
-<!--           <input class='form-control' type='text' name='name' placeholder='Event' ng-model='inputName'/> 
-          <input class='form-control' type='text' name='frequency' placeholder='Frequency' ng-model='inputFrequency'/>
-          <input class='form-control' colorpicker-position="bottom" colorpicker="rgb" type="text" placeholder="Background Color" ng-model="inputBackground"/>
-          <input class='form-control' colorpicker-position="bottom" colorpicker="rgb" type="text" placeholder="Font Color" ng-model="inputFontColor"/> -->
-          <!-- Display sample if name and frequency are entered -->
-<!--           <input ng-if='(inputName && inputFrequency)' class='btn btn-sm btn-primary' type='button' name='' value="That's Right!" ng-click='click(inputName, inputFrequency, inputBackground, inputFontColor)'>
-        </div>
-      </form> -->
-
-      <!-- Display if frequency is blank -->
-<!--       <div ng-if='(inputName && inputFrequency)' class="container-fluid colWidth">
-        <br/>
-        <div class="col-xs-4 item" ng-style='{opacity: 0}'></div>
-        <div class="col-xs-4 item" ng-class='happening' ng-style='{background: inputBackground, color: inputFontColor, textAlign: center}'>{{inputName | uppercase}} happens once every {{inputFrequency}} seconds.</div>
-        <div class="col-xs-4 item" ng-style='{opacity: 0}'></div>
-      </div> -->
-
-      <!-- Display if name and frequency are entered -->
-<!--       <div ng-if='(inputName && !inputFrequency)' class="container-fluid colWidth">
-        <br/>
-        <div class="col-xs-4 item" ng-style='{opacity: 0}'></div>
-        <div class="col-xs-4 item" ng-class='happening' ng-style='{background: inputBackground, color: inputFontColor, textAlign: center}'>{{inputName | uppercase}} happens once every __ seconds.</div>
-        <div class="col-xs-4 item" ng-style='{opacity: 0}'></div>
-      </div>
-    </div> -->
-<!-- 
-
-    <br/>
-    <br/>
-
-    <div class="container-fluid colWidth">    
-      <div class="row" ng-controller='indicatorController'>
-        <div class="col-xs-3 item" ng-class='ind.class' ng-style='{background: ind.background, color: ind.font}' ng-repeat='ind in indicators'>{{ind.name | uppercase}}</div>
-      </div>
-    </div> -->
 
   </body>
 </html>
