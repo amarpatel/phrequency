@@ -3,9 +3,9 @@ ToDo
   -on click: edit title/change colors 
   -adjust height of items
     -vertically align text
-  -have items appear on click
 
 Done
+  // -have items appear on click
   // -have create indicator slide in on button click
   // -have ~10 already running
   // -add indicator:
