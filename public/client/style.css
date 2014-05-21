@@ -17,9 +17,10 @@
      -mox-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
-  font-size: 1.5em;
-  vertical-align: middle;
+  font-size: 1.8vw;
 
+  /*previous*/
+  /*font-size: 1.5em;*/
 }
 
 .center {
@@ -35,13 +36,8 @@
 }
 
 .col-xs-3 {
-  height: 120px;
-}
+  height: 10vw;
 
-.footerProtector {
-  min-height: 50%;
-}
-
-[ng\:cloak], [ng-cloak], .ng-cloak {
-    display: none !important;
+  /*previous*/
+  /*height: 120px;*/
 }

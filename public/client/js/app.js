@@ -56,7 +56,6 @@ angular.module('phrequency', ['colorpicker.module', 'ui.router'])
     item.class = (item.class === "happening") ? "notHappening" : "happening";
   };
 
-
   //calls /submit and GETs data; assigns data to $scope.indicators
   $scope.get = function () {
     $scope.indicators = undefined;
@@ -108,5 +107,5 @@ angular.module('phrequency', ['colorpicker.module', 'ui.router'])
       }, interval);
     }
   }
-}])
+}]);
 
