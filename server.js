@@ -5,7 +5,7 @@ var util = require('./lib/util');
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + '/public'));
 
-app.listen(2627);
+app.listen(8000);
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/public/client/index.html');
@@ -20,4 +20,4 @@ app.get('/*', function (req, res) {
   res.redirect('/');
 });
 
-console.log('Live on port 2627');
+console.log('Live on port 8000');
