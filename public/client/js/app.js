@@ -9,8 +9,9 @@ angular.module('phrequency', ['colorpicker.module', 'ui.router'])
     .state('/', {
       url: '/',
       views: {
-        inputs: { templateUrl: 'client/templates/createButton.html', controller: 'indicatorInputController'},
-        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
+        inputsView: { templateUrl: 'client/templates/createButton.html', controller: 'indicatorInputController'},
+        footerView: { templateUrl: 'client/templates/footer.html', controller: 'indicatorInputController'},
+        indicatorsView: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
       }
     })
     
@@ -18,8 +19,9 @@ angular.module('phrequency', ['colorpicker.module', 'ui.router'])
     .state('/create', {
       url: '/create',
       views: {
-        inputs: { templateUrl: 'client/templates/inputs.html', controller: 'indicatorInputController'},
-        indicators: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
+        inputsView: { templateUrl: 'client/templates/inputs.html', controller: 'indicatorInputController'},
+        footerView: { templateUrl: 'client/templates/footer.html', controller: 'indicatorInputController'},
+        indicatorsView: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
       }
     })
 })
@@ -57,6 +59,7 @@ angular.module('phrequency', ['colorpicker.module', 'ui.router'])
 
   //calls /submit and GETs data; assigns data to $scope.indicators
   $scope.get = function () {
+    $scope.indicators = undefined;
     restful.getIndicators().then(function (promise){
       $scope.indicators = promise.data;
       $scope.intervalSetter($scope.indicators);

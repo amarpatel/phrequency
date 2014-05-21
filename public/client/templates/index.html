@@ -8,7 +8,7 @@
     <link rel='stylesheet' type='text/css' href='/bower_components/bootstrap/dist/css/bootstrap.css'>
     <link rel='stylesheet' type='text/css' href='/client/colorpicker/colorpicker.css'>
     <script src='/bower_components/angular/angular.js'></script>
-    <script src='bower_components/angular-ui-router/release/angular-ui-router.js'></script>
+    <script src='/bower_components/angular-ui-router/release/angular-ui-router.js'></script>
     <script src='/client/colorpicker/bootstrap-colorpicker-module.js'></script>
     <script src='/client/js/app.js'></script>
   </head>
@@ -18,27 +18,12 @@
     <h1 class="center">phrequency</h1>
     <h5 class="center">a flash for every occurance</h5>
 
-    <!-- input views -->
-    <div ui-view="inputs"></div>
-
+    <!-- Views -->
+    <div ui-view="inputsView"></div>
     <br/>
-    
-    <!-- indicators-->
-    <div ui-view="indicators"></div>
-
-    <!-- footer -->
-    <div class="footer-wrapper center">
-      <footer>Inspired by <a href="http://www.xkcd.com/1331/" title="http://www.xkcd.com/1331/">xkcd</a></footer>
-      <footer>
-        Built using 
-        <a href="https://angularjs.org/" title="https://angularjs.org/">angularjs</a>, 
-        <a href="http://expressjs.com/" title="http://expressjs.com/">expressjs</a>, 
-        <a href="http://nodejs.org/" title="http://nodejs.org/">nodejs</a>, 
-        <a href="http://mongoosejs.com/" title="http://mongoosejs.com/">mongoosejs</a>, 
-        and <a href="http://www.mongodb.com/" title="http://www.mongodb.com/">mongoDB</a> 
-        by <a href="http://www.amarpatel.io/" title="http://amarpatel.io/">amarpatel.io</a>
-      </footer>
-    </div>
+    <div ui-view="indicatorsView"></div>    
+    <br/>
+    <div ui-view="footerView"></div>
 
   </body>
 </html>

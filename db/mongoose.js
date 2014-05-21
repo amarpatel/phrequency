@@ -20,7 +20,7 @@ var indicatorSchema = new Schema({
   },
   background: {
     type: String,
-    default: 'white'
+    default: 'lightgrey'
   },
   font: {
     type: String,
