@@ -2,41 +2,44 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // concat: {
-    //   dist: {
-    //     src: [],
-    //     dest:
-    //   }
-    // },
+    concat: {
+      // dist: {
+      //   src: [],
+      //   dest: '',
+      // }
+    },
 
     nodemon: {
       dev: {
         script: 'server.js'
+      },
+      options: {
+       ignore: ['node_modules/**']
       }
     },
 
     uglify: {
       dist: {
         files: {
-          'dist/mongoose.min.js': 'db/mongoose.js',
-          // 'dist/widget.js': 'src/widget.js'
+          'public/dist/mongoose.min.js': 'db/mongoose.js',
+          'public/dist/util.min.js': 'lib/util.js',
+          'public/dist/bootstrap-colorpicker-module.min.js': 'public/client/colorpicker/bootstrap-colorpicker-module.js',
+          'public/dist/app.min.js': 'public/client/js/app.js'
         }
       }
     },
 
     jshint: {
       files: [
-       'public/client/*.js',
-       'app/**/*.js',
-       '*.js'
+       'db/mongoose.js',
+       'lib/util.js',
+       'public/client/js/app.js'
       ],
       options: {
         force: 'true',
         jshintrc: '.jshintrc',
         ignores: [
-          'public/lib/**/*.js',
-          'public/dist/**/*.js',
-          'app/db/*'
+          // '',
         ]
       }
     },
