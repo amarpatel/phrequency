@@ -1,6 +1,6 @@
 angular.module('phrequency', ['colorpicker.module', 'ui.router'])
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -24,7 +24,7 @@ angular.module('phrequency', ['colorpicker.module', 'ui.router'])
         indicatorsView: { templateUrl: 'client/templates/indicators.html', controller: 'indicatorInputController'}
       }
     })
-})
+}])
 
 .controller('indicatorInputController', ['$scope', 'restful', 'intervalCreator', '$location', function ($scope, restful, intervalCreator, $location) {
 

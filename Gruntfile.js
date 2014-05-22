@@ -3,10 +3,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
-      // dist: {
-      //   src: [],
-      //   dest: '',
-      // }
+      dist: {
+        src: ['public/client/colorpicker/colorpicker.css', 'public/client/style.css'],
+        dest: 'public/client/style.concat.css',
+      }
     },
 
     nodemon: {
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 
     cssmin: {
       build : {
-        src :'public/style.css',
+        src :'public/client/style.concat.css',
         dest:'public/dist/style.min.css'
       }
     },
