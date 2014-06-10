@@ -4,7 +4,11 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['public/client/colorpicker/colorpicker.css', 'public/client/style.css'],
+        src: [
+          'public/client/colorpicker/colorpicker.css', 
+          'public/client/style.css', 
+          'bower_components/bootstrap/dist/css/bootstrap.css'
+        ],
         dest: 'public/client/style.concat.css',
       }
     },
