@@ -5,8 +5,8 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'public/client/colorpicker/colorpicker.css', 
-          'public/client/style.css', 
+          'client/colorpicker/colorpicker.css', 
+          'client/style.css', 
           'bower_components/bootstrap/dist/css/bootstrap.css'
         ],
         dest: 'public/client/style.concat.css',
@@ -50,8 +50,8 @@ module.exports = function(grunt) {
 
     cssmin: {
       build : {
-        src :'public/client/style.concat.css',
-        dest:'public/dist/style.min.css'
+        src :'client/style.concat.css',
+        dest:'dist/style.min.css'
       }
     },
 
