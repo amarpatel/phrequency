@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var ip = 'mongodb://localhost/phrequency';
+var ip = 'mongodb://phrequency:YBUwcj_pcp7gTJRXBV1VBbRk8LLbnbXU6h4VA2Cw1xw-@ds050077.mongolab.com:50077/phrequency';
 
 mongoose.connect(ip);
 

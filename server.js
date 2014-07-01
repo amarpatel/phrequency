@@ -5,7 +5,9 @@ var util = require('./lib/util');
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + '/client'));
 
-app.listen(8000);
+var port = process.env.Port || 8000;
+
+app.listen(port);
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/client/index.html');
@@ -20,4 +22,4 @@ app.get('/*', function (req, res) {
   res.redirect('/');
 });
 
-console.log('Live on port 8000');
+console.log('Live on port ' + port);
